@@ -1,0 +1,11 @@
+name = "apexplenitude"
+compatibility_date = "2026-09-07"
+main = "worker/index.ts"
+
+[assets]
+directory = "./out"
+binding = "ASSETS"
+
+[[send_email]]
+name = "CONTACT_EMAIL"
+destination_address = "apexplenitude@gmail.com"

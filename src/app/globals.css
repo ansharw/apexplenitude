@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+:root {
+  /* Primary — deep mineral night */
+  --color-void: #0c0e0e;
+  --color-void-deep: #101212;
+  --color-void-raised: #111314;
+
+  /* Secondary — warm archival bone */
+  --color-bone: #f0ece3;
+  --color-bone-deep: #e9e5dc;
+  --color-bone-raised: #f5f1e8;
+
+  /* Tertiary — celestial blue-black, used rarely */
+  --color-celestial: #0d1118;
+  --color-celestial-deep: #10151d;
+
+  /* Text */
+  --color-fg: #eae8e1;
+  --color-fg-muted: #a9aaa5;
+  --color-ink: #171916;
+  --color-ink-muted: #55524c;
+
+  /* Hairlines */
+  --color-rule-dark: #2a2e2d;
+  --color-rule-light: #d2cdc2;
+  --color-rule-dark-soft: rgba(234, 232, 225, 0.14);
+  --color-rule-light-soft: rgba(23, 25, 22, 0.12);
+
+  /* Accents — restrained, used sparingly */
+  --color-moonlight: #aebbc5;
+  --color-brass: #8d7950;
+
+  --font-serif: var(--font-instrument-serif);
+  --font-sans: var(--font-geist);
+  --font-mono: var(--font-plex-mono);
+
+  --ease-institutional: cubic-bezier(0.19, 1, 0.22, 1);
+
+  --container-content: 1440px;
+  --container-wide: 1600px;
+  --container-reading: 760px;
+}
+
+@theme inline {
+  --color-void: var(--color-void);
+  --color-void-deep: var(--color-void-deep);
+  --color-void-raised: var(--color-void-raised);
+  --color-bone: var(--color-bone);
+  --color-bone-deep: var(--color-bone-deep);
+  --color-bone-raised: var(--color-bone-raised);
+  --color-celestial: var(--color-celestial);
+  --color-celestial-deep: var(--color-celestial-deep);
+  --color-fg: var(--color-fg);
+  --color-fg-muted: var(--color-fg-muted);
+  --color-ink: var(--color-ink);
+  --color-ink-muted: var(--color-ink-muted);
+  --color-rule-dark: var(--color-rule-dark);
+  --color-rule-light: var(--color-rule-light);
+  --color-moonlight: var(--color-moonlight);
+  --color-brass: var(--color-brass);
+
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  --ease-institutional: var(--ease-institutional);
+
+  --container-content: var(--container-content);
+  --container-wide: var(--container-wide);
+  --container-reading: var(--container-reading);
+}
+
+* {
+  border-color: var(--color-rule-dark-soft);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-void);
+  color: var(--color-fg);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Light institutional surfaces (Monument mode alternation, archival bone) */
+.on-bone {
+  --color-rule-dark-soft: rgba(23, 25, 22, 0.12);
+  background: var(--color-bone);
+  color: var(--color-ink);
+}
+
+.on-bone * {
+  border-color: var(--color-rule-light-soft);
+}
+
+::selection {
+  background: var(--color-moonlight);
+  color: var(--color-void);
+}
+
+:focus-visible {
+  outline: 1px solid var(--color-moonlight);
+  outline-offset: 3px;
+}
+
+.on-bone :focus-visible {
+  outline: 1px solid var(--color-ink);
+}
+
+/* Coordinate / metadata typography */
+.coordinate {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 640px) {
+  .coordinate {
+    font-size: 11.5px;
+  }
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
