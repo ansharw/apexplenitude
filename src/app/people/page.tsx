@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { Coordinate } from "@/components/ui/Coordinate";
 import { Reveal } from "@/components/ui/Reveal";
 import { PageHero } from "@/components/ui/PageHero";
+import { PeopleProfile } from "@/components/ui/PeopleProfile";
 import { founderName, founderTitle, founderBio, futureLeadership } from "@/content/people";
 
 export const metadata: Metadata = { title: "People" };
@@ -15,15 +16,9 @@ export default function PeoplePage() {
       <section className="border-t border-rule-dark-soft py-24 sm:py-32">
         <Container>
           <Reveal>
-            <Coordinate index="—">{founderTitle}</Coordinate>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <h2 className="mt-6 font-serif text-4xl sm:text-6xl text-fg">{founderName}</h2>
-          </Reveal>
-          <Reveal delay={0.16}>
-            <p className="mt-8 max-w-2xl font-sans text-lg leading-relaxed text-fg-muted">
+            <PeopleProfile name={founderName} title={founderTitle}>
               {founderBio}
-            </p>
+            </PeopleProfile>
           </Reveal>
         </Container>
       </section>
