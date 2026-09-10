@@ -9,25 +9,26 @@ export const metadata: Metadata = { title: "Innovation" };
 
 export default function InnovationPage() {
   return (
-    <>
+    <div className="on-mineral">
       <PageHero
+        light
         index="Innovation"
         label="Innovation"
         title="Convert understanding into capability."
         intro="Research becomes civilizationally consequential when understanding can be translated into tools, systems, infrastructure, and institutions."
       />
 
-      <section className="border-t border-rule-dark-soft py-24 sm:py-32">
+      <section className="border-t border-rule-mineral-soft py-24 sm:py-32">
         <Container>
           <Reveal>
-            <Coordinate index="—">The Innovation Loop</Coordinate>
+            <Coordinate index="—" className="text-ink/50">The Innovation Loop</Coordinate>
           </Reveal>
           <div className="mt-12 flex flex-wrap items-center gap-x-3 gap-y-4">
             {innovationLoop.map((step, i) => (
               <Reveal key={step} delay={i * 0.03} className="flex items-center gap-3">
-                <span className="font-serif text-xl sm:text-2xl text-fg">{step}</span>
+                <span className="font-serif text-xl sm:text-2xl text-ink">{step}</span>
                 {i < innovationLoop.length - 1 && (
-                  <span className="text-fg-muted opacity-40">→</span>
+                  <span className="text-ink-muted opacity-40">→</span>
                 )}
               </Reveal>
             ))}
@@ -35,26 +36,26 @@ export default function InnovationPage() {
         </Container>
       </section>
 
-      <section className="border-t border-rule-dark-soft py-24 sm:py-32">
+      <section className="border-t border-rule-mineral-soft py-24 sm:py-32">
         <Container>
           <Reveal>
-            <Coordinate index="—">May Support</Coordinate>
+            <Coordinate index="—" className="text-ink/50">May Support</Coordinate>
           </Reveal>
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-5">
             {innovationActivities.map((a) => (
               <Reveal key={a}>
-                <p className="font-serif text-xl sm:text-2xl text-fg capitalize">{a}</p>
+                <p className="font-serif text-xl sm:text-2xl text-ink capitalize">{a}</p>
               </Reveal>
             ))}
           </div>
           <Reveal delay={0.1} className="mt-16">
-            <p className="font-serif text-2xl sm:text-3xl italic text-fg-muted max-w-2xl">
+            <p className="font-serif text-2xl sm:text-3xl italic text-ink-muted max-w-2xl">
               A possibility becomes interesting when reality begins answering
               back.
             </p>
           </Reveal>
         </Container>
       </section>
-    </>
+    </div>
   );
 }

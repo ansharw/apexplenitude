@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Coordinate } from "@/components/ui/Coordinate";
 import { Reveal } from "@/components/ui/Reveal";
@@ -9,6 +10,7 @@ import {
   purpose,
   characterConstraints,
   plenitudeAttributes,
+  principles,
 } from "@/content/institution";
 
 export const metadata: Metadata = { title: "Institution" };
@@ -72,10 +74,28 @@ export default function InstitutionPage() {
         </Container>
       </section>
 
+      <section className="border-t border-rule-dark-soft py-24 sm:py-32">
+        <Container>
+          <Reveal>
+            <Coordinate index="03">Principles</Coordinate>
+          </Reveal>
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 border-t border-rule-dark-soft">
+            {principles.map((p) => (
+              <Reveal key={p.title}>
+                <div className="border-b border-rule-dark-soft py-8 pr-8">
+                  <h3 className="font-serif text-xl text-fg">{p.title}</h3>
+                  <p className="mt-2 font-sans text-sm text-fg-muted">{p.body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       <section className="on-bone border-t border-rule-light-soft py-24 sm:py-32">
         <Container>
           <Reveal>
-            <Coordinate index="03" className="text-ink/50">The Plenitude Principle</Coordinate>
+            <Coordinate index="04" className="text-ink/50">The Plenitude Principle</Coordinate>
           </Reveal>
           <Reveal delay={0.08}>
             <p className="mt-8 max-w-3xl font-serif text-3xl sm:text-4xl leading-[1.2] text-ink">
@@ -96,7 +116,7 @@ export default function InstitutionPage() {
       <section className="border-t border-rule-dark-soft py-24 sm:py-32">
         <Container>
           <Reveal>
-            <Coordinate index="04">Stewardship</Coordinate>
+            <Coordinate index="05">Stewardship</Coordinate>
           </Reveal>
           <Reveal delay={0.08}>
             <p className="mt-8 max-w-3xl font-serif text-2xl sm:text-4xl leading-[1.25] text-fg">
@@ -108,6 +128,17 @@ export default function InstitutionPage() {
           <Reveal delay={0.16} className="mt-10">
             <ArrowLink href="/governance">Read on Governance</ArrowLink>
           </Reveal>
+        </Container>
+      </section>
+
+      <section className="border-t border-rule-dark-soft py-10">
+        <Container>
+          <Link
+            href="/archive/founder"
+            className="font-sans text-xs text-fg-muted/60 hover:text-fg-muted transition-colors duration-300"
+          >
+            Intellectual origins →
+          </Link>
         </Container>
       </section>
     </>

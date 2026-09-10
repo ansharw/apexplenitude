@@ -1,35 +1,43 @@
 @import "tailwindcss";
 
 :root {
-  /* Primary — deep mineral night */
-  --color-void: #0c0e0e;
-  --color-void-deep: #101212;
-  --color-void-raised: #111314;
+  /* A — Observatory Black (Cosmos, Frontiers, Fundamental Science, Atlas) */
+  --color-void: #0c0f0f;
+  --color-void-deep: #0a0c0c;
+  --color-void-raised: #111515;
 
-  /* Secondary — warm archival bone */
-  --color-bone: #f0ece3;
-  --color-bone-deep: #e9e5dc;
-  --color-bone-raised: #f5f1e8;
+  /* B — Institutional Ivory (Institution, Capital, Governance, People, Benefaction, Record) */
+  --color-bone: #f1eee6;
+  --color-bone-deep: #e8e3d7;
+  --color-bone-raised: #f7f4ec;
+
+  /* C — Mineral Neutral (Research, Innovation, Human Possibility, Civilization) */
+  --color-mineral: #e9eae6;
+  --color-mineral-deep: #dfe1db;
+  --color-mineral-raised: #eff0ec;
 
   /* Tertiary — celestial blue-black, used rarely */
   --color-celestial: #0d1118;
   --color-celestial-deep: #10151d;
 
   /* Text */
-  --color-fg: #eae8e1;
-  --color-fg-muted: #a9aaa5;
-  --color-ink: #171916;
-  --color-ink-muted: #55524c;
+  --color-fg: #e9e8e1;
+  --color-fg-muted: #a4a8a4;
+  --color-ink: #181a18;
+  --color-ink-muted: #5d605c;
+  --color-mineral-ink: #1a1d1a;
+  --color-mineral-muted: #62665f;
 
   /* Hairlines */
   --color-rule-dark: #2a2e2d;
-  --color-rule-light: #d2cdc2;
-  --color-rule-dark-soft: rgba(234, 232, 225, 0.14);
-  --color-rule-light-soft: rgba(23, 25, 22, 0.12);
+  --color-rule-light: #d7d2c7;
+  --color-rule-dark-soft: rgba(233, 232, 225, 0.13);
+  --color-rule-light-soft: rgba(24, 26, 24, 0.12);
+  --color-rule-mineral-soft: rgba(26, 29, 26, 0.11);
 
   /* Accents — restrained, used sparingly */
-  --color-moonlight: #aebbc5;
-  --color-brass: #8d7950;
+  --color-moonlight: #aebbc4;
+  --color-brass: #8b7954;
 
   --font-serif: var(--font-instrument-serif);
   --font-sans: var(--font-geist);
@@ -49,6 +57,11 @@
   --color-bone: var(--color-bone);
   --color-bone-deep: var(--color-bone-deep);
   --color-bone-raised: var(--color-bone-raised);
+  --color-mineral: var(--color-mineral);
+  --color-mineral-deep: var(--color-mineral-deep);
+  --color-mineral-raised: var(--color-mineral-raised);
+  --color-mineral-ink: var(--color-mineral-ink);
+  --color-mineral-muted: var(--color-mineral-muted);
   --color-celestial: var(--color-celestial);
   --color-celestial-deep: var(--color-celestial-deep);
   --color-fg: var(--color-fg);
@@ -87,7 +100,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Light institutional surfaces (Monument mode alternation, archival bone) */
+/* Environment A — Institutional Ivory (sovereign, archival) */
 .on-bone {
   --color-rule-dark-soft: rgba(23, 25, 22, 0.12);
   background: var(--color-bone);
@@ -96,6 +109,19 @@ body {
 
 .on-bone * {
   border-color: var(--color-rule-light-soft);
+}
+
+/* Environment C — Mineral Neutral (laboratory, research institution) */
+.on-mineral {
+  --color-ink: var(--color-mineral-ink);
+  --color-ink-muted: var(--color-mineral-muted);
+  --color-rule-dark-soft: var(--color-rule-mineral-soft);
+  background: var(--color-mineral);
+  color: var(--color-ink);
+}
+
+.on-mineral * {
+  border-color: var(--color-rule-mineral-soft);
 }
 
 ::selection {
@@ -108,7 +134,8 @@ body {
   outline-offset: 3px;
 }
 
-.on-bone :focus-visible {
+.on-bone :focus-visible,
+.on-mineral :focus-visible {
   outline: 1px solid var(--color-ink);
 }
 

@@ -25,3 +25,4 @@ export * from "./governance";
 export * from "./record";
 export * from "./news";
 export * from "./contact";
+export * from "./founderArchive";

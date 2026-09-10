@@ -14,8 +14,8 @@ export const indexColumns = [
     heading: "Institution",
     items: [
       { label: "Institution", href: "/institution" },
-      { label: "Governance", href: "/governance" },
       { label: "People", href: "/people" },
+      { label: "Governance", href: "/governance" },
       { label: "Record", href: "/record" },
     ],
   },
@@ -29,16 +29,16 @@ export const indexColumns = [
     ],
   },
   {
-    heading: "Capability",
+    heading: "Actualization",
     items: [
       { label: "Innovation", href: "/innovation" },
-      { label: "Capital", href: "/capital" },
       { label: "Ventures", href: "/ventures" },
       { label: "Projects", href: "/projects" },
+      { label: "Capital", href: "/capital" },
     ],
   },
   {
-    heading: "Possibility",
+    heading: "Human",
     items: [
       { label: "Human Possibility", href: "/human-possibility" },
       { label: "Patronage", href: "/patronage" },
@@ -62,6 +62,7 @@ export const indexColumns = [
       { label: "Publications", href: "/publications" },
       { label: "Establishments", href: "/establishments" },
       { label: "News", href: "/news" },
+      { label: "Founder's Archive", href: "/archive/founder" },
       { label: "Contact", href: "/contact" },
     ],
   },

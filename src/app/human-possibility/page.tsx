@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: "Human Possibility" };
 
 export default function HumanPossibilityPage() {
   return (
-    <div className="on-bone">
+    <div className="on-mineral">
       <section className="pt-40 pb-20 sm:pt-52 sm:pb-28">
         <Container>
           <Reveal>
@@ -29,7 +29,7 @@ export default function HumanPossibilityPage() {
         </Container>
       </section>
 
-      <section className="border-t border-rule-light-soft py-20 sm:py-28">
+      <section className="border-t border-rule-mineral-soft py-20 sm:py-28">
         <Container>
           <Reveal>
             <Coordinate index="—" className="text-ink/50">Domains of Human Possibility</Coordinate>
@@ -37,7 +37,7 @@ export default function HumanPossibilityPage() {
           <div className="mt-10 flex flex-wrap gap-4">
             {possibilityDomains.map((d) => (
               <Reveal key={d}>
-                <span className="font-sans text-sm sm:text-base text-ink-muted border border-rule-light-soft px-4 py-2">
+                <span className="font-sans text-sm sm:text-base text-ink-muted border border-rule-mineral-soft px-4 py-2">
                   {d}
                 </span>
               </Reveal>
@@ -46,7 +46,7 @@ export default function HumanPossibilityPage() {
         </Container>
       </section>
 
-      <section className="border-t border-rule-light-soft py-24 sm:py-32">
+      <section className="border-t border-rule-mineral-soft py-24 sm:py-32">
         <Container>
           <Reveal>
             <Coordinate index="—" className="text-ink/50">Optionality</Coordinate>

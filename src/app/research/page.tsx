@@ -9,26 +9,27 @@ export const metadata: Metadata = { title: "Research" };
 
 export default function ResearchPage() {
   return (
-    <>
+    <div className="on-mineral">
       <PageHero
+        light
         index="Research"
         label="Research"
         title="Curiosity is an institutional function."
         intro="Apex Plenitude supports inquiry across boundaries traditionally separated by academia, industry, government, and philanthropy."
       />
 
-      <section className="border-t border-rule-dark-soft">
+      <section className="border-t border-rule-mineral-soft">
         {researchDomains.map((d) => (
           <Reveal key={d.title}>
-            <div className="border-b border-rule-dark-soft py-12 sm:py-16">
+            <div className="border-b border-rule-mineral-soft py-12 sm:py-16">
               <Container>
                 <div className="grid grid-cols-1 sm:grid-cols-[100px_1fr] gap-x-8 gap-y-6">
                   <span className="coordinate opacity-40">{d.index}</span>
                   <div>
-                    <h2 className="font-serif text-3xl sm:text-4xl text-fg">{d.title}</h2>
+                    <h2 className="font-serif text-3xl sm:text-4xl text-ink">{d.title}</h2>
                     <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2">
                       {d.areas.map((a) => (
-                        <span key={a} className="font-sans text-sm text-fg-muted border border-rule-dark-soft px-3 py-1.5">
+                        <span key={a} className="font-sans text-sm text-ink-muted border border-rule-mineral-soft px-3 py-1.5">
                           {a}
                         </span>
                       ))}
@@ -44,7 +45,7 @@ export default function ResearchPage() {
         ))}
       </section>
 
-      <section className="on-bone border-t border-rule-light-soft py-24 sm:py-32">
+      <section className="border-t border-rule-mineral-soft py-24 sm:py-32">
         <Container>
           <Reveal>
             <Coordinate index="—" className="text-ink/50">The Research Standard</Coordinate>
@@ -63,6 +64,6 @@ export default function ResearchPage() {
           </div>
         </Container>
       </section>
-    </>
+    </div>
   );
 }

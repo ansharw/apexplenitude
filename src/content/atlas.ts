@@ -13,6 +13,7 @@ export type AtlasTerritory = {
   title: string;
   definition: string;
   subterritories: string[];
+  related: string[];
 };
 
 export const atlasTerritories: AtlasTerritory[] = [
@@ -27,6 +28,7 @@ export const atlasTerritories: AtlasTerritory[] = [
       "Attachment", "Intelligence", "Perception", "Personality", "Decision-making",
       "Creativity", "Identity",
     ],
+    related: ["life", "society", "metaphysics"],
   },
   {
     slug: "life",
@@ -38,6 +40,7 @@ export const atlasTerritories: AtlasTerritory[] = [
       "Cells", "Genetics", "Evolution", "Microbiology", "Physiology", "Health",
       "Disease", "Aging", "Reproduction", "Ecosystems", "Synthetic biology",
     ],
+    related: ["mind", "matter", "earth"],
   },
   {
     slug: "society",
@@ -50,6 +53,7 @@ export const atlasTerritories: AtlasTerritory[] = [
       "Religion", "Language", "Education", "Media", "Culture", "War",
       "Cooperation", "Civilization",
     ],
+    related: ["mind", "machines", "metaphysics"],
   },
   {
     slug: "matter",
@@ -61,6 +65,7 @@ export const atlasTerritories: AtlasTerritory[] = [
       "Particles", "Atoms", "Molecules", "Chemistry", "Materials",
       "Quantum phenomena", "Thermodynamics", "Condensed matter",
     ],
+    related: ["life", "machines", "cosmos"],
   },
   {
     slug: "machines",
@@ -73,6 +78,7 @@ export const atlasTerritories: AtlasTerritory[] = [
       "Manufacturing", "Energy systems", "Transportation", "Autonomy",
       "Communication",
     ],
+    related: ["matter", "society", "frontiers"],
   },
   {
     slug: "earth",
@@ -83,6 +89,7 @@ export const atlasTerritories: AtlasTerritory[] = [
       "Atmosphere", "Oceans", "Geology", "Climate", "Biosphere", "Resources",
       "Cities", "Infrastructure",
     ],
+    related: ["life", "cosmos", "matter"],
   },
   {
     slug: "cosmos",
@@ -94,6 +101,7 @@ export const atlasTerritories: AtlasTerritory[] = [
       "Dark matter", "Dark energy", "Cosmology", "Origins of structure",
       "Observable universe",
     ],
+    related: ["earth", "frontiers", "metaphysics"],
   },
   {
     slug: "frontiers",
@@ -104,6 +112,7 @@ export const atlasTerritories: AtlasTerritory[] = [
       "Quantum gravity", "Spacetime", "Unification", "Additional dimensions",
       "Vacuum structure", "Early-universe physics", "Unknown physical phenomena",
     ],
+    related: ["cosmos", "machines", "metaphysics"],
   },
   {
     slug: "metaphysics",
@@ -114,6 +123,7 @@ export const atlasTerritories: AtlasTerritory[] = [
       "Being", "Causation", "Time", "Identity", "Possibility", "Necessity",
       "Mind and matter", "Ontology", "Epistemology",
     ],
+    related: ["mind", "frontiers", "revelation"],
   },
   {
     slug: "revelation",
@@ -125,6 +135,7 @@ export const atlasTerritories: AtlasTerritory[] = [
       "God", "Creation", "Purpose", "Moral command", "The unseen",
       "Human responsibility", "Eschatology",
     ],
+    related: ["metaphysics", "society", "mind"],
   },
 ];
 

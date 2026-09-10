@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { Coordinate } from "@/components/ui/Coordinate";
 import { Reveal } from "@/components/ui/Reveal";
 import { EpistemicMarker } from "@/components/ui/EpistemicMarker";
+import { RelationshipMap } from "@/components/ui/RelationshipMap";
 import { atlasTerritories } from "@/content/atlas";
 
 export function generateStaticParams() {
@@ -33,6 +34,9 @@ export default async function TerritoryPage({
 
   const prev = atlasTerritories[(index - 1 + atlasTerritories.length) % atlasTerritories.length];
   const next = atlasTerritories[(index + 1) % atlasTerritories.length];
+  const related = territory.related
+    .map((slug) => atlasTerritories.find((t) => t.slug === slug))
+    .filter((t): t is (typeof atlasTerritories)[number] => Boolean(t));
 
   return (
     <div className="lg:grid lg:grid-cols-[240px_1fr]">
@@ -111,6 +115,22 @@ export default async function TerritoryPage({
                   <EpistemicMarker status="SPECULATIVE" />
                 </div>
               </Reveal>
+            </div>
+          </Container>
+        </section>
+
+        <section className="border-t border-rule-dark-soft py-16 sm:py-24">
+          <Container>
+            <Reveal>
+              <Coordinate index="—">Connected Territories</Coordinate>
+            </Reveal>
+            <div className="mt-8">
+              <RelationshipMap
+                nodes={[
+                  { label: territory.title, href: `/atlas/${territory.slug}` },
+                  ...related.map((t) => ({ label: t.title, href: `/atlas/${t.slug}` })),
+                ]}
+              />
             </div>
           </Container>
         </section>

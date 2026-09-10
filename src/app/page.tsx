@@ -1,12 +1,13 @@
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
+import { ArrowLink } from "@/components/ui/ArrowLink";
 import { CycleMovement } from "@/components/sections/CycleMovement";
 import { TerritoryScale } from "@/components/sections/TerritoryScale";
 import { ScalePassage } from "@/components/sections/ScalePassage";
 import { FourFunctions } from "@/components/sections/FourFunctions";
 import { FieldsIndex } from "@/components/sections/FieldsIndex";
 import { heroCoordinates, closingLines } from "@/content/home";
-import { institutionalParagraph } from "@/content/institution";
+import { oneSentence } from "@/content/institution";
 
 export default function Home() {
   return (
@@ -66,12 +67,8 @@ export default function Home() {
               administrative boundaries.
             </p>
           </Reveal>
-          <Reveal delay={0.16}>
-            <p className="mt-10 max-w-xl font-sans text-lg leading-relaxed text-fg-muted">
-              We are interested in the smallest meaningful distinction and
-              the largest structure we can coherently investigate. Apex
-              Plenitude exists to move across them.
-            </p>
+          <Reveal delay={0.16} className="mt-10">
+            <ArrowLink href="/institution">The Institution</ArrowLink>
           </Reveal>
         </Container>
       </section>
@@ -91,31 +88,24 @@ export default function Home() {
       {/* 6th movement — fields index */}
       <FieldsIndex />
 
-      {/* Principle interlude */}
-      <section className="border-t border-rule-dark-soft py-28 sm:py-40">
+      {/* 7th movement — record + closing */}
+      <section className="border-t border-rule-dark-soft py-20 sm:py-28">
         <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <Reveal>
-              <p className="coordinate opacity-50">A Principle</p>
-              <p className="mt-6 font-serif text-2xl sm:text-3xl leading-snug text-fg">
-                Nothing real is beneath serious inquiry. No phenomenon
-                becomes insignificant merely because it is small. No
-                question becomes profound merely because it is cosmic.
-              </p>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <p className="coordinate opacity-50">Another Principle</p>
-              <p className="mt-6 font-serif text-2xl sm:text-3xl leading-snug text-fg">
-                Possibility is not actuality. The institution is permitted
-                to investigate extraordinary possibilities. It is not
-                permitted to promote uncertainty as certainty.
-              </p>
-            </Reveal>
-          </div>
+          <Reveal>
+            <p className="coordinate opacity-50">07 / The Record</p>
+          </Reveal>
+          <Reveal delay={0.08} className="mt-6">
+            <p className="font-sans text-base sm:text-lg text-fg-muted max-w-md">
+              Selected publications, projects, and research will appear here
+              as they are established.
+            </p>
+          </Reveal>
+          <Reveal delay={0.14} className="mt-6">
+            <ArrowLink href="/record">The Record</ArrowLink>
+          </Reveal>
         </Container>
       </section>
 
-      {/* Final movement */}
       <section className="border-t border-rule-dark-soft py-32 sm:py-52">
         <Container>
           <Reveal>
@@ -133,8 +123,8 @@ export default function Home() {
             ))}
           </div>
           <Reveal delay={0.4}>
-            <p className="mt-16 max-w-xl font-sans text-base leading-relaxed text-fg-muted">
-              {institutionalParagraph}
+            <p className="mt-16 max-w-xl font-serif italic text-lg leading-relaxed text-fg-muted">
+              {oneSentence}
             </p>
           </Reveal>
         </Container>

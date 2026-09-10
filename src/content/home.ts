@@ -41,8 +41,6 @@ export const territories = [
   { label: "Earth", description: "Atmosphere, oceans, geology, climate, and planetary infrastructure." },
   { label: "Cosmos", description: "Stars, black holes, galaxies, and the observable universe." },
   { label: "Frontiers", description: "Where established knowledge becomes incomplete but inquiry remains possible." },
-  { label: "Metaphysics", description: "Being, causation, time, identity, and the structure of possibility itself." },
-  { label: "Revelation", description: "God, creation, purpose, and moral command — held distinct from empirical science." },
 ];
 
 export const functions = [
@@ -69,14 +67,14 @@ export const functions = [
 ];
 
 export const fields = [
-  { label: "Intelligence", description: "Understanding reality more deeply.", href: "/research" },
-  { label: "Life", description: "Living systems, health, biology, cognition, and human flourishing.", href: "/human-possibility" },
-  { label: "Technology", description: "Extending what humans can build, automate, sense, and create.", href: "/innovation" },
-  { label: "Freedom", description: "Increasing meaningful human optionality.", href: "/human-possibility" },
+  { label: "Research", description: "Curiosity is an institutional function.", href: "/research" },
+  { label: "Human Possibility", description: "Civilization is ultimately experienced one life at a time.", href: "/human-possibility" },
   { label: "Civilization", description: "The systems through which billions of people live together.", href: "/civilization" },
-  { label: "Culture", description: "What human beings can imagine, transmit, remember, and become.", href: "/culture" },
-  { label: "Cosmos", description: "Humanity's place within physical reality and the frontier beyond Earth.", href: "/frontiers" },
-  { label: "Benefaction", description: "Returning accumulated capability to human possibility.", href: "/benefaction" },
+  { label: "Frontiers", description: "Where the map becomes faint.", href: "/frontiers" },
+  { label: "Innovation", description: "Convert understanding into capability.", href: "/innovation" },
+  { label: "Capital", description: "Capital preserves optionality.", href: "/capital" },
+  { label: "Culture", description: "Imagination is possibility infrastructure.", href: "/culture" },
+  { label: "Benefaction", description: "Accumulated capability should return outward.", href: "/benefaction" },
 ];
 
 export const closingLines = [
