@@ -4,7 +4,9 @@ import { Coordinate } from "@/components/ui/Coordinate";
 import { Reveal } from "@/components/ui/Reveal";
 import { PageHero } from "@/components/ui/PageHero";
 import { InstitutionalQuote } from "@/components/ui/InstitutionalQuote";
+import { ArrowLink } from "@/components/ui/ArrowLink";
 import { benefactionAreas, benefactionModes, benefactionPrinciple } from "@/content/benefaction";
+import { founderName, founderTitle } from "@/content/people";
 
 export const metadata: Metadata = { title: "Benefaction" };
 
@@ -46,6 +48,17 @@ export default function BenefactionPage() {
       </section>
 
       <InstitutionalQuote lines={benefactionPrinciple} />
+
+      <section className="border-t border-rule-dark-soft py-16">
+        <Container>
+          <Reveal>
+            <p className="coordinate opacity-40">{founderTitle}</p>
+            <div className="mt-4">
+              <ArrowLink href="/people">{founderName}</ArrowLink>
+            </div>
+          </Reveal>
+        </Container>
+      </section>
     </>
   );
 }
