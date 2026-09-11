@@ -6,8 +6,10 @@ import { TerritoryScale } from "@/components/sections/TerritoryScale";
 import { ScalePassage } from "@/components/sections/ScalePassage";
 import { FourFunctions } from "@/components/sections/FourFunctions";
 import { FieldsIndex } from "@/components/sections/FieldsIndex";
+import { PeopleProfile } from "@/components/ui/PeopleProfile";
 import { heroCoordinates, closingLines } from "@/content/home";
 import { oneSentence } from "@/content/institution";
+import { founderName, founderTitle, founderBio } from "@/content/people";
 
 export default function Home() {
   return (
@@ -87,6 +89,23 @@ export default function Home() {
 
       {/* 6th movement — fields index */}
       <FieldsIndex />
+
+      {/* Founder */}
+      <section className="border-t border-rule-dark-soft py-24 sm:py-32">
+        <Container>
+          <Reveal>
+            <p className="coordinate opacity-50">Founder</p>
+          </Reveal>
+          <Reveal delay={0.08} className="mt-8">
+            <PeopleProfile name={founderName} title={founderTitle}>
+              {founderBio}
+            </PeopleProfile>
+          </Reveal>
+          <Reveal delay={0.16} className="mt-8">
+            <ArrowLink href="/people">People</ArrowLink>
+          </Reveal>
+        </Container>
+      </section>
 
       {/* 7th movement — record + closing */}
       <section className="border-t border-rule-dark-soft py-20 sm:py-28">
