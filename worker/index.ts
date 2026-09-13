@@ -7,7 +7,7 @@ interface Env {
 }
 
 const SENDER_ADDRESS = "contact@apexplenitude.com";
-const RECIPIENT_ADDRESS = "apexplenitude@gmail.com";
+const RECIPIENT_ADDRESS = "alphaquerencia@gmail.com";
 
 interface ContactPayload {
   name?: string;

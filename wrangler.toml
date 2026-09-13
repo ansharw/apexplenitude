@@ -8,4 +8,4 @@ binding = "ASSETS"
 
 [[send_email]]
 name = "CONTACT_EMAIL"
-destination_address = "apexplenitude@gmail.com"
+destination_address = "alphaquerencia@gmail.com"
