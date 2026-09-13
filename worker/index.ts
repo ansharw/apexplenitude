@@ -6,8 +6,17 @@ interface Env {
   CONTACT_EMAIL: SendEmail;
 }
 
-const SENDER_ADDRESS = "contact@apexplenitude.com";
+const DEFAULT_SENDER_ADDRESS = "contact@apexplenitude.com";
 const RECIPIENT_ADDRESS = "alphaquerencia@gmail.com";
+
+const CHANNEL_SENDER_ADDRESS: Record<string, string> = {
+  "Institutional Relations": "institutional@apexplenitude.com",
+  "Research": "research@apexplenitude.com",
+  "Capital": "capital@apexplenitude.com",
+  "Partnerships": "partnerships@apexplenitude.com",
+  "Benefaction": "benefaction@apexplenitude.com",
+  "Media": "media@apexplenitude.com",
+};
 
 interface ContactPayload {
   name?: string;
@@ -40,8 +49,10 @@ async function handleContact(request: Request, env: Env): Promise<Response> {
     return json({ error: "All fields are required." }, 400);
   }
 
+  const senderAddress = CHANNEL_SENDER_ADDRESS[channel] ?? DEFAULT_SENDER_ADDRESS;
+
   const msg = createMimeMessage();
-  msg.setSender({ name: "Apex Plenitude — Contact Form", addr: SENDER_ADDRESS });
+  msg.setSender({ name: `Apex Plenitude — ${channel}`, addr: senderAddress });
   msg.setRecipient(RECIPIENT_ADDRESS);
   msg.setHeader("Reply-To", new Mailbox(email));
   msg.setSubject(`Contact — ${channel} — ${name}`);
@@ -56,7 +67,7 @@ async function handleContact(request: Request, env: Env): Promise<Response> {
     ].join("\n"),
   });
 
-  const emailMessage = new EmailMessage(SENDER_ADDRESS, RECIPIENT_ADDRESS, msg.asRaw());
+  const emailMessage = new EmailMessage(senderAddress, RECIPIENT_ADDRESS, msg.asRaw());
 
   try {
     await env.CONTACT_EMAIL.send(emailMessage);
